@@ -1,0 +1,93 @@
+.navContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  max-width: 100%;
+  position: absolute; /* Ensure proper stacking context */
+  min-height: -webkit-fill-available;
+  top: 0;
+  left: 0;
+  background-color: var(--accent);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 500;
+}
+
+.nav {
+  width: 80px;
+  position: relative; /* Ensure proper alignment for clipPath */
+  z-index: 1; /* Make sure the nav stays above the background */
+}
+
+.background {
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 0; /* Keep background beneath other elements */
+}
+
+/*Socials Section*/
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 2em;
+  z-index: 1;
+  position: fixed;
+  right: 1.5em;
+  top: 1.5em;
+}
+
+.instagram,
+.x,
+.discord {
+  scale: 1.5;
+}
+
+/*white background on hover*/
+.instagram:after,
+.x:after,
+.discord:after {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(233, 233, 233, 0.5),
+    0px 0px 10px rgba(192, 192, 192, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.instagram:hover:after,
+.x:hover:after,
+.discord:hover:after {
+  scale: 5;
+  transform: translateX(0.09em) translateY(0.09em);
+}
+
+/*default default stroke colour for all*/
+.instagram svg path,
+.x svg path,
+.discord svg path {
+  stroke: #808080;
+  transition: 0.4s ease-in-out;
+}
+
+/*individual stroke colour for all*/
+.instagram:hover svg path {
+  stroke: #cc39a4;
+}
+.x:hover svg path {
+  stroke: black;
+}
+.discord:hover svg path {
+  stroke: #8c9eff;
+}

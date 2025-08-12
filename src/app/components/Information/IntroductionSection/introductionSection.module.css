@@ -1,0 +1,90 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 20vh;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row;
+  }
+}
+
+.left {
+  flex: 1;
+  padding: 1rem;
+  text-wrap: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*intro*/
+
+/* Styles for the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  text-wrap: wrap;
+  height: 100vh;
+  user-select: none;
+}
+
+/* Intro text styling */
+.introStart h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bigHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.name {
+  color: #ff9800;
+}
+
+.role {
+  color: #757575;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.introBody {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #616161;
+  line-height: 1.5;
+  text-wrap: wrap;
+}

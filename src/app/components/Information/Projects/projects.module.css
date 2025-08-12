@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  width: 150%;
+  overflow: hidden; /* Hide overflowing cards for seamless looping */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 20rem; /* Adjust to fit the card height */
+}
+
+.scrollWrapper {
+  display: flex;
+  gap: 2rem; /* Space between cards */
+  white-space: nowrap;
+}
+
+.scrollWrapper > div {
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  width: 18rem; /* Adjust to match your Card width */
+}
+
+.marqueeWrapper {
+  width: 200%;
+  max-width: 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -50%;
+  mix-blend-mode: difference;
+}
+
+.marqueeContainer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transform: perspective(1000px) rotate3d(-7, -2, 5, -30deg) translateY(15vh)
+    scale(0.9) skew(20deg);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.marqueeContent {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.card span {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 1);
+}

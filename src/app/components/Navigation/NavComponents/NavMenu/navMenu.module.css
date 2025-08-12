@@ -1,0 +1,55 @@
+.toggleContainer {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 2; /* Ensure it's above the nav and mask */
+}
+
+.list {
+  list-style: none;
+  padding: 25px;
+  margin: 0;
+  position: absolute;
+  top: 80px;
+  width: 230px;
+  z-index: 1;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.iconPlaceholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: 40px 0;
+  margin-right: 20px;
+  border: 2px solid #8b8b8b;
+}
+
+.textPlaceholder {
+  border-radius: 5px;
+  width: 200px;
+  height: 36px;
+  flex: 1;
+  border: 2px solid #8b8b8b;
+  color: black;
+}

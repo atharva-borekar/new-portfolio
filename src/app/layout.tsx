@@ -1,5 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import MaskedCursor from "components/MaskedCursor/MaskedCursor";
+import Navigation from "components/Navigation";
+import StickyNav from "components/Navigation/NavComponents/StickyNav";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,6 +30,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script id="script">
+          {`VANTA.WAVES({
+              el: "#body-wrapper",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 200.00,
+              minWidth: 200.00,
+              scale: 1.00,
+              scaleMobile: 1.00,
+              color: 0x0,
+              waveHeight: 10.00,
+              zoom: 0.75
+            })`}
+        </Script>
+        <MaskedCursor />
+        <StickyNav />
+        <Navigation />
+        <div id="body-wrapper" />
         {children}
       </body>
     </html>
