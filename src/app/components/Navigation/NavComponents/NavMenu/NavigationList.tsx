@@ -12,67 +12,73 @@ const navVariants = {
 };
 
 const NavigationList = () => {
+  const navItems = [
+    {
+      title: "Home",
+      href: "#intro",
+      icon: (
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
+        </svg>
+      ),
+    },
+    {
+      title: "Experience",
+      href: "#experience",
+      icon: (
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
+        </svg>
+      ),
+    },
+    {
+      title: "Projects",
+      href: "#projects",
+      icon: (
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
+        </svg>
+      ),
+    },
+    {
+      title: "Contact",
+      href: "#contact",
+      icon: (
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <motion.ul className={styles.list} variants={navVariants}>
-      {[
-        {
-          title: "Home",
-          icon: (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-            </svg>
-          ),
-        },
-        {
-          title: "About",
-          icon: (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-            </svg>
-          ),
-        },
-        {
-          title: "Projects",
-          icon: (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-            </svg>
-          ),
-        },
-        {
-          title: "Contact",
-          icon: (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-            </svg>
-          ),
-        },
-      ].map((i) => (
-        <MenuItem i={i} key={i.title} />
+      {navItems.map((item) => (
+        <MenuItem i={item} key={item.title} />
       ))}
     </motion.ul>
   );

@@ -20,7 +20,8 @@ const Socials = () => {
       transition={{ duration: 1 }}
     >
       <a
-        href="https://www.instagram.com/uiverse.io/"
+        target="_blank"
+        href="https://www.instagram.com/_.a.t.h.u_"
         className={styles.instagram}
       >
         <motion.svg
@@ -41,7 +42,11 @@ const Socials = () => {
           />
         </motion.svg>
       </a>
-      <a href="https://twitter.com/uiverse_io" className={styles.x}>
+      <a
+        target="_blank"
+        href="https://x.com/AtharvaBorekar"
+        className={styles.x}
+      >
         <motion.svg
           width={24}
           height={24}
@@ -60,7 +65,11 @@ const Socials = () => {
           />
         </motion.svg>
       </a>
-      <a href="https://discord.gg/KD8ba2uUpT" className={styles.discord}>
+      <a
+        target="_blank"
+        href="https://discord.gg/KD8ba2uUpT"
+        className={styles.discord}
+      >
         <motion.svg
           width={25}
           height={25}
@@ -104,8 +113,9 @@ export default function Navigation() {
         className={styles.nav}
       >
         <motion.div className={styles.background} variants={sidebarVariants} />
-
-        <NavigationList />
+        <div className="mobile-navigation">
+          <NavigationList />
+        </div>
         <Socials />
         <MenuToggle toggle={() => setIsOpen((p) => !p)} />
       </motion.nav>

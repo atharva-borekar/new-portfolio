@@ -35,11 +35,9 @@ export default function Home() {
     <div className={styles.container} ref={containerRef}>
       <div className="example">
         <section id="intro" className="scroll-section">
-          <pre>
-            <IntroductionSection containerRef={containerRef} />
-          </pre>
+          <IntroductionSection containerRef={containerRef} />
         </section>
-        <section id="experience" className="projects">
+        <section id="experience" className="experience">
           <ExperienceTimeline />
         </section>
         <section id="projects" className="projects">

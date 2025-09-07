@@ -79,12 +79,13 @@ const ScrollAnimation = ({
   const imageDim = useTransform(scrollYProgress, [0, 20, 100], [100, 150, 200]);
   return (
     <section
-      id="#intro"
       style={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        height: "100vh",
+        paddingTop: "4rem",
       }}
       className="w-100 pt-5 text-wrap flex-wrap"
     >

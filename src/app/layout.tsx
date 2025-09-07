@@ -55,6 +55,7 @@ export default function RootLayout({
         </Script>
         <MaskedCursor />
         <StickyNav />
+
         <Navigation />
         <div id="body-wrapper" />
         {children}
