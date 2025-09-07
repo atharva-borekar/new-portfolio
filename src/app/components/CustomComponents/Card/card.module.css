@@ -1,7 +1,9 @@
 .group {
   position: relative;
-  width: 40rem; /* 80 */
-  height: 18rem; /* 72 */
+  width: 80vw; /* responsive width relative to viewport */
+  max-width: 40rem; /* max width */
+  height: 45vw; /* height relative to viewport width */
+  max-height: 18rem; /* max height */
   background-color: #000000; /* slate-50 */
   display: flex;
   flex-direction: column;
@@ -11,40 +13,42 @@
   text-align: center;
   overflow: hidden;
   margin: 0px 5px;
+  border-radius: 1rem;
 }
 
 .before {
   position: absolute;
   top: 0;
-  width: 40rem; /* 80 */
+  width: 100%;
+  height: 100%; /* fill card height */
   background: linear-gradient(to left, #000000, #585656, #000000);
   z-index: 0;
 }
 
-.profilePicture {
+.projectPicture {
   position: relative;
   z-index: 10;
-  width: 7rem;
-  height: 7rem;
-  background-color: #1d4ed8;
+  width: 18%; /* relative to card width */
+  aspect-ratio: 1; /* keep circle */
+  background-color: #ff9800;
   margin-top: 2rem;
-  border-radius: 50%;
+  border-radius: 50%; /* ensures circle */
   border: 0.25rem solid #f8fafc;
   transition: transform 0.5s ease;
 }
-
-.userInfo {
+.projectInfo {
   position: relative;
   z-index: 10;
   transition: transform 0.5s ease;
+  text-wrap: wrap;
 }
 
 .name {
-  font-size: 1.5rem; /* 2xl */
+  font-size: 1.2rem;
   font-weight: 600; /* semibold */
 }
 
-.followButton {
+.projectLink {
   position: relative;
   z-index: 10;
   color: #f8fafc; /* slate-50 */

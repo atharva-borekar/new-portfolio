@@ -1,10 +1,14 @@
 "use client";
 
 import IntroductionSection from "components/Information/IntroductionSection";
-import Projects from "components/Information/Projects";
 import { animate, inView } from "motion";
+import dynamic from "next/dynamic";
 import styles from "page.module.css";
 import { useEffect, useRef } from "react";
+
+const Projects = dynamic(() => import("components/Information/Projects"), {
+  ssr: false,
+});
 export default function Home() {
   const containerRef = useRef(null);
 
@@ -34,14 +38,8 @@ export default function Home() {
             <IntroductionSection containerRef={containerRef} />
           </pre>
         </section>
-        <section className="scroll-section">
-          <pre>
-            <div
-              style={{ height: 400, width: "100%", mixBlendMode: "difference" }}
-            ></div>
-          </pre>
-        </section>
-        <section className="scroll-section">
+
+        <section id="projects" className="projects">
           {/* <pre>
             <div
               style={{

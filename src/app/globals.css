@@ -2,6 +2,11 @@
   --background: #ffffff;
   --foreground: #171717;
   cursor: none;
+  overflow-x: none;
+  --font-share: @import
+      url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap"),
+    sans-serif;
+  font-family: var(--font-share);
 }
 ::-webkit-scrollbar {
   display: none;
