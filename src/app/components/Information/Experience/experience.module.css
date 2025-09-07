@@ -1,0 +1,78 @@
+.section {
+  position: relative;
+  height: 100vh;
+  color: white;
+}
+
+/* Sticky heading at top */
+.heading {
+  top: 8rem;
+  text-align: center;
+  z-index: 20;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+}
+
+/* Sticky horizontal timeline */
+.sticky {
+  position: sticky;
+  top: 5rem; /* start below heading */
+  height: 100vh;
+  overflow: hidden;
+}
+
+.timelineWrapper {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  will-change: transform;
+}
+
+.timelineCard {
+  flex: 0 0 300px;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  height: -webkit-fill-available;
+}
+
+.year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    position: relative;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .sticky {
+    position: relative;
+    height: auto;
+    top: 0;
+  }
+
+  .timelineWrapper {
+    flex-direction: column;
+    gap: 2rem;
+    transform: none !important;
+  }
+
+  .timelineCard {
+    flex: unset;
+    width: 100%;
+  }
+}

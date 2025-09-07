@@ -2,8 +2,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { RefObject } from "react";
 import styles from "./introductionSection.module.css";
-const src =
-  "https://e7.pngegg.com/pngimages/913/851/png-clipart-responsive-web-design-html-world-wide-web-consortium-world-wide-web-angle-text.png";
+// const src =
+//   "https://e7.pngegg.com/pngimages/913/851/png-clipart-responsive-web-design-html-world-wide-web-consortium-world-wide-web-angle-text.png";
 
 const Intro = () => {
   return (
@@ -17,7 +17,7 @@ const Intro = () => {
         <h3 className="big-heading role color-warning">
           I build things for the web.
         </h3>
-        {/* <div className="mt-4">
+        <div className="mt-4">
           <button
             type="button"
             disabled
@@ -56,7 +56,7 @@ const Intro = () => {
           <br />
           Possess good communication skills and flexible to work in any
           environment as required.
-        </div> */}
+        </div>
       </div>
     </section>
   );
@@ -78,7 +78,8 @@ const ScrollAnimation = ({
   const opacity = useTransform(scrollYProgress, [0, 0.1, 1], [1, 0.5, 0]); // Fade out
   const imageDim = useTransform(scrollYProgress, [0, 20, 100], [100, 150, 200]);
   return (
-    <div
+    <section
+      id="#intro"
       style={{
         display: "flex",
         flexDirection: "row",
@@ -117,7 +118,7 @@ const ScrollAnimation = ({
           className="img-fluid"
         />
       </motion.div>
-    </div>
+    </section>
   );
 };
 

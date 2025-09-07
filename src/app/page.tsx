@@ -1,5 +1,6 @@
 "use client";
 
+import ExperienceTimeline from "components/Information/Experience";
 import IntroductionSection from "components/Information/IntroductionSection";
 import { animate, inView } from "motion";
 import dynamic from "next/dynamic";
@@ -33,34 +34,16 @@ export default function Home() {
   return (
     <div className={styles.container} ref={containerRef}>
       <div className="example">
-        <section className="scroll-section">
+        <section id="intro" className="scroll-section">
           <pre>
             <IntroductionSection containerRef={containerRef} />
           </pre>
         </section>
-
-        <section id="projects" className="projects">
-          {/* <pre>
-            <div
-              style={{
-                mixBlendMode: "difference",
-              }}
-            > */}
-          <Projects />
-          {/* </div>
-          </pre> */}
+        <section id="experience" className="projects">
+          <ExperienceTimeline />
         </section>
-        <section className="scroll-section">
-          <pre>
-            <div
-              style={{
-                height: 200,
-                width: "100%",
-                mixBlendMode: "difference",
-                marginTop: "25em",
-              }}
-            ></div>
-          </pre>
+        <section id="projects" className="projects">
+          <Projects />
         </section>
       </div>
 

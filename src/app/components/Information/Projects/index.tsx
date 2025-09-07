@@ -1,16 +1,19 @@
 "use client";
 
 import Card from "components/CustomComponents/Card";
-
 import profileData from "constants/portfolioData";
 import { motion, useAnimationFrame } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 const Projects = () => {
   const [offsetX, setOffsetX] = useState(0);
   const [isHovered, setIsHovered] = useState(-1);
+  const [isMobile, setIsMobile] = useState(false);
+
   const speed = 0.05;
   const cardWidth = 200;
   const gap = 10;
+
   const projects = profileData.projects.map((project, i) => (
     <Card
       key={i}
@@ -20,10 +23,20 @@ const Projects = () => {
       isHovered={isHovered}
     />
   ));
-  const totalWidth = projects?.length * (cardWidth + gap);
 
+  const totalWidth = projects.length * (cardWidth + gap);
+
+  // Detect mobile screen
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Only animate horizontal scroll on desktop
   useAnimationFrame((_, delta) => {
-    if (isHovered === -1) {
+    if (!isMobile && isHovered === -1) {
       setOffsetX((prev) => prev - delta * speed);
     }
   });
@@ -31,33 +44,76 @@ const Projects = () => {
   const translateX = offsetX % totalWidth;
 
   return (
-    <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
-      <motion.div
+    <>
+      {/* Projects Heading */}
+      <div style={{ justifySelf: "center", marginBottom: "2rem" }}>
+        <h2>Projects</h2>
+      </div>
+
+      {/* Projects Wrapper */}
+      <div
         style={{
-          display: "flex",
-          gap: `${gap}px`,
-          transform: `translateX(${translateX}px)`,
+          overflow: "hidden",
+          whiteSpace: isMobile ? "normal" : "nowrap",
+          display: "block",
         }}
       >
-        {[...projects, ...projects].map((item, index) => (
+        {isMobile ? (
+          // Mobile: simple vertical stack
           <div
-            key={index}
-            onMouseEnter={() => setIsHovered(index)}
-            onMouseLeave={() => setIsHovered(-1)}
             style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: "8px",
-              boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
-              cursor: "pointer",
+              flexDirection: "column",
+              gap: `${gap}px`,
             }}
           >
-            {item}
+            {projects.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "8px",
+                  boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
+                  cursor: "pointer",
+                  marginBottom: "1rem",
+                }}
+              >
+                {item}
+              </div>
+            ))}
           </div>
-        ))}
-      </motion.div>
-    </div>
+        ) : (
+          // Desktop: horizontal infinite scroll with motion
+          <motion.div
+            style={{
+              display: "flex",
+              gap: `${gap}px`,
+              transform: `translateX(${translateX}px)`,
+            }}
+          >
+            {[...projects, ...projects].map((item, index) => (
+              <div
+                key={index}
+                onMouseEnter={() => setIsHovered(index)}
+                onMouseLeave={() => setIsHovered(-1)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "8px",
+                  boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
+                  cursor: "pointer",
+                }}
+              >
+                {item}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </div>
+    </>
   );
 };
 

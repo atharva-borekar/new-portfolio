@@ -33,7 +33,7 @@ const StickyNav = () => {
     >
       <nav className={styles.nav}>
         <motion.a
-          href="#"
+          href="#intro"
           className={styles.navItem}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -49,7 +49,17 @@ const StickyNav = () => {
           <span className={styles.homeButton}>Home</span>
         </motion.a>
         <motion.a
-          // href="#projects"
+          href="#experience"
+          className={styles.navItem}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.5 }}
+          onClick={() => scrollToSection("projects")}
+        >
+          Experience
+        </motion.a>
+        <motion.a
+          href="#projects"
           className={styles.navItem}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -58,15 +68,7 @@ const StickyNav = () => {
         >
           Projects
         </motion.a>
-        <motion.a
-          href="#"
-          className={styles.navItem}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.5 }}
-        >
-          Services
-        </motion.a>
+
         <motion.a
           href="#"
           className={styles.navItem}

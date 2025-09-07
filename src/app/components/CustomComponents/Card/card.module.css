@@ -1,15 +1,15 @@
 .group {
   position: relative;
-  width: 80vw; /* responsive width relative to viewport */
-  max-width: 40rem; /* max width */
-  height: 45vw; /* height relative to viewport width */
-  max-height: 18rem; /* max height */
-  background-color: #000000; /* slate-50 */
+  width: 80vw;
+  max-width: 40rem;
+  height: 45vw;
+  max-height: 18rem;
+  background-color: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* 2 */
+  gap: 0.5rem;
   text-align: center;
   overflow: hidden;
   margin: 0px 5px;
@@ -20,7 +20,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%; /* fill card height */
+  height: 100%;
   background: linear-gradient(to left, #000000, #585656, #000000);
   z-index: 0;
 }
@@ -28,19 +28,20 @@
 .projectPicture {
   position: relative;
   z-index: 10;
-  width: 18%; /* relative to card width */
-  aspect-ratio: 1; /* keep circle */
+  width: 18%;
+  aspect-ratio: 1;
   background-color: #ff9800;
   margin-top: 2rem;
-  border-radius: 50%; /* ensures circle */
+  border-radius: 50%;
   border: 0.25rem solid #f8fafc;
   transition: transform 0.5s ease;
 }
+
 .projectInfo {
-  position: absolute; /* make sure it’s relative to .group */
-  top: 1rem; /* small spacing from top */
+  position: absolute;
+  top: 1rem;
   left: 50%;
-  transform: translateX(-50%); /* only center horizontally */
+  transform: translateX(-50%);
   z-index: 10;
   text-align: center;
   text-wrap: wrap;
@@ -61,4 +62,49 @@
   padding: 0.25rem 1rem;
   border-radius: 0.375rem;
   transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+/* ✅ Mobile overrides */
+@media (max-width: 768px) {
+  .group {
+    width: 80%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+    border-radius: 0.5rem;
+  }
+
+  .before {
+    display: none; /* remove gradient overlay */
+  }
+
+  .projectPicture {
+    width: 50px;
+    height: 50px;
+    margin-top: 1rem;
+    border-radius: 50%;
+    border: 0.125rem solid #f8fafc;
+    transform: none !important;
+  }
+
+  .projectInfo {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none !important;
+    text-align: left;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    text-justify: center;
+  }
+
+  .projectLink {
+    position: relative;
+    bottom: auto;
+    margin-top: 0.5rem;
+    align-self: center;
+    transform: none !important;
+  }
 }
