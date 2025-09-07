@@ -38,19 +38,38 @@ const Card = ({ id, setIsHovered, isHovered, project }: CardProps) => {
         animate={
           isActive ? { scale: 1.5, x: -275, y: -100 } : { scale: 1, x: 0, y: 0 }
         }
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.2 }}
       />
 
+      {/* Project info at the top */}
       <motion.div
         className={styles.projectInfo}
-        animate={isActive ? { y: "-90%" } : { y: 0 }}
+        animate={isActive ? { opacity: 1 } : { opacity: 0.8 }}
         transition={{ duration: 0.2 }}
       >
         <span className={styles.name}>{project?.name}</span>
-        {isActive ? <p>{project?.description}</p> : <></>}
+        {isActive && (
+          <>
+            <motion.p
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0, marginTop: 24 }}
+              transition={{ duration: 0.3 }}
+            >
+              {project?.description}
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {project?.techStack}
+            </motion.p>
+          </>
+        )}
       </motion.div>
 
       <motion.a
+        target="_blank"
         href={project?.link}
         className={styles.projectLink}
         animate={

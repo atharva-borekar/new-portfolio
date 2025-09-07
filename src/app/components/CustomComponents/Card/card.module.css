@@ -37,22 +37,28 @@
   transition: transform 0.5s ease;
 }
 .projectInfo {
-  position: relative;
+  position: absolute; /* make sure it’s relative to .group */
+  top: 1rem; /* small spacing from top */
+  left: 50%;
+  transform: translateX(-50%); /* only center horizontally */
   z-index: 10;
-  transition: transform 0.5s ease;
+  text-align: center;
   text-wrap: wrap;
+  height: max-content;
+  transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
 .name {
   font-size: 1.2rem;
-  font-weight: 600; /* semibold */
+  font-weight: 600;
 }
 
 .projectLink {
-  position: relative;
+  position: absolute;
+  bottom: 20px;
   z-index: 10;
-  color: #f8fafc; /* slate-50 */
-  padding: 0.25rem 1rem; /* px-4 py-1 */
-  border-radius: 0.375rem; /* rounded-md */
+  color: #f8fafc;
+  padding: 0.25rem 1rem;
+  border-radius: 0.375rem;
   transition: transform 0.5s ease, background-color 0.5s ease;
 }
