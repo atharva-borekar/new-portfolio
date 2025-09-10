@@ -1,5 +1,11 @@
 import { MenuItem } from "components/Navigation/NavComponents";
 import { motion } from "motion/react";
+import { ImProfile } from "react-icons/im";
+import { IoMdContact } from "react-icons/io";
+import { IoFileTrayStacked } from "react-icons/io5";
+
+import { IoHome } from "react-icons/io5";
+
 import styles from "./navMenu.module.css";
 
 const navVariants = {
@@ -16,61 +22,29 @@ const NavigationList = () => {
     {
       title: "Home",
       href: "#intro",
-      icon: (
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-        </svg>
-      ),
+      icon: <IoHome size={30} color="#ff9800" style={{ marginRight: 8 }} />,
     },
     {
       title: "Experience",
       href: "#experience",
-      icon: (
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-        </svg>
-      ),
+      icon: <ImProfile size={30} color="#ff9800" style={{ marginRight: 8 }} />,
     },
     {
       title: "Projects",
       href: "#projects",
       icon: (
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-        </svg>
+        <IoFileTrayStacked
+          size={30}
+          color="#ff9800"
+          style={{ marginRight: 8 }}
+        />
       ),
     },
     {
       title: "Contact",
       href: "#contact",
       icon: (
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="16" cy="16" r="16" fill="#CFCFCF" />
-        </svg>
+        <IoMdContact size={30} color="#ff9800" style={{ marginRight: 8 }} />
       ),
     },
   ];

@@ -20,7 +20,7 @@ interface CardProps {
 
 const Card = ({ id, setIsHovered, isHovered, project }: CardProps) => {
   const isActive = isHovered === id;
-
+  const bgImage = `/assets/images/bg_${id}.png`;
   return (
     <motion.div className={styles.group}>
       <motion.div
@@ -35,6 +35,7 @@ const Card = ({ id, setIsHovered, isHovered, project }: CardProps) => {
 
       <motion.div
         className={styles.projectPicture}
+        style={{ backgroundImage: `url(${bgImage})` }}
         animate={
           isActive ? { scale: 1.5, x: -275, y: -100 } : { scale: 1, x: 0, y: 0 }
         }

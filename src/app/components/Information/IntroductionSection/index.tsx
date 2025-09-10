@@ -46,6 +46,20 @@ const Intro = () => {
           >
             HTML / CSS
           </button>
+          <button
+            type="button"
+            disabled
+            className="mx-2 my-2 btn btn-outline-warning"
+          >
+            Python
+          </button>
+          <button
+            type="button"
+            disabled
+            className="mx-2 my-2 btn btn-outline-warning"
+          >
+            Flask
+          </button>
         </div>
         <div className="intro-body text-wrap">
           An avid person who is always curious about the working of technology

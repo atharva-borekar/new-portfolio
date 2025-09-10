@@ -98,6 +98,7 @@ const Projects = () => {
                 key={index}
                 onMouseEnter={() => setIsHovered(index)}
                 onMouseLeave={() => setIsHovered(-1)}
+                onClick={() => setIsHovered((p) => (p === index ? -1 : index))}
                 style={{
                   display: "flex",
                   alignItems: "center",

@@ -65,7 +65,7 @@ const Socials = () => {
           />
         </motion.svg>
       </a>
-      <a
+      {/* <a
         target="_blank"
         href="https://discord.gg/KD8ba2uUpT"
         className={styles.discord}
@@ -87,7 +87,7 @@ const Socials = () => {
             strokeLinejoin="round"
           />
         </motion.svg>
-      </a>
+      </a> */}
     </motion.div>
   );
 };

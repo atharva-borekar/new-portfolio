@@ -7,6 +7,7 @@
       url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap"),
     sans-serif;
   font-family: var(--font-share);
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -15,7 +16,9 @@
 ::-webkit-scrollbar-button {
   display: none;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   -ms-overflow-style: none;
 }
