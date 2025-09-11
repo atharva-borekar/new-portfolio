@@ -1,6 +1,5 @@
 .section {
   position: relative;
-  height: 300vh; /* enough vertical space to scroll */
   background: #111;
 }
 

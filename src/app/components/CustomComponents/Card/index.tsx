@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styles from "./card.module.css";
 
 interface Project {
@@ -19,8 +19,18 @@ interface CardProps {
 }
 
 const Card = ({ id, setIsHovered, isHovered, project }: CardProps) => {
-  const isActive = isHovered === id;
-  const bgImage = `/assets/images/bg_${id}.png`;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768); // treat <768px as mobile
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isActive = isMobile ? true : isHovered === id;
+  const bgImage = `/assets/images/bg_${id + 1}.png`;
+
   return (
     <motion.div className={styles.group}>
       <motion.div

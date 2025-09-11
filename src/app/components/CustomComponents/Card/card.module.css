@@ -2,8 +2,7 @@
   position: relative;
   width: 80vw;
   max-width: 40rem;
-  height: 45vw;
-  max-height: 18rem;
+  height: 18rem;
   background-color: #000000;
   display: flex;
   flex-direction: column;
@@ -35,6 +34,9 @@
   border-radius: 50%;
   border: 0.25rem solid #f8fafc;
   transition: transform 0.5s ease;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .projectInfo {
@@ -47,6 +49,7 @@
   text-wrap: wrap;
   height: max-content;
   transition: transform 0.5s ease, opacity 0.3s ease;
+  color: #f8fafc;
 }
 
 .name {
@@ -67,13 +70,16 @@
 /* ✅ Mobile overrides */
 @media (max-width: 768px) {
   .group {
-    width: 80%;
+    width: 90%;
     height: auto;
+    max-height: none; /* 🔥 allow full height on mobile */
+    overflow: visible; /* 🔥 let content expand */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: 0 0 1rem 0;
     border-radius: 0.5rem;
+    padding: 1rem;
   }
 
   .before {
@@ -81,9 +87,9 @@
   }
 
   .projectPicture {
-    width: 50px;
-    height: 50px;
-    margin-top: 1rem;
+    width: 60px;
+    height: 60px;
+    margin-top: 0.5rem;
     border-radius: 50%;
     border: 0.125rem solid #f8fafc;
     transform: none !important;
@@ -91,20 +97,24 @@
 
   .projectInfo {
     position: relative;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: auto;
     transform: none !important;
     text-align: left;
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-    text-justify: center;
+    margin: 0.75rem 0 0 0;
+    width: 100%;
+    opacity: 1 !important; /* always visible on mobile */
+  }
+
+  .name {
+    font-size: 1rem;
   }
 
   .projectLink {
     position: relative;
     bottom: auto;
-    margin-top: 0.5rem;
-    align-self: center;
+    margin-top: 0.75rem;
+    align-self: flex-start;
     transform: none !important;
   }
 }
