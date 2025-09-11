@@ -15,13 +15,7 @@ const Projects = () => {
   const gap = 10;
 
   const projects = profileData.projects.map((project, i) => (
-    <Card
-      key={i}
-      id={i}
-      project={project}
-      setIsHovered={setIsHovered}
-      isHovered={isHovered}
-    />
+    <Card key={i} id={i} project={project} isHovered={isHovered} />
   ));
 
   const totalWidth = projects.length * (cardWidth + gap);

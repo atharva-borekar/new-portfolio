@@ -2,14 +2,12 @@
 
 import useMousePosition from "hooks/useMousePosition";
 import { motion } from "motion/react";
-import { useState } from "react";
 import "./maskedCursor.css";
 
 const MaskedCursor = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const { mouseX, mouseY } = useMousePosition();
 
-  const size = isHovered ? 400 : 40;
+  const size = 40;
 
   return (
     <motion.span

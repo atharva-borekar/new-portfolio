@@ -22,7 +22,6 @@ const MenuToggle = ({ toggle }: { toggle: () => void }) => (
     className={styles.toggleContainer}
     onClick={() => {
       toggle();
-      console.log("clicked nav");
     }}
   >
     <svg width="23" height="23" viewBox="0 0 23 23">

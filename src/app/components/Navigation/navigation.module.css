@@ -92,13 +92,11 @@
 .discord:hover svg path {
   stroke: #8c9eff;
 }
-/* Hide Navigation on desktop */
 .mobile-navigation {
-  display: block; /* show by default (mobile) */
+  display: block !important;
 }
 
-/* Hide on desktop */
-@media (min-width: 1024px) {
+@media only screen and (max-width: 768px) {
   .mobile-navigation {
     display: none;
   }

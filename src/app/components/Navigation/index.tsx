@@ -114,10 +114,10 @@ export default function Navigation() {
       >
         <motion.div className={styles.background} variants={sidebarVariants} />
         <div className="mobile-navigation">
+          <MenuToggle toggle={() => setIsOpen((p) => !p)} />
           <NavigationList />
         </div>
         <Socials />
-        <MenuToggle toggle={() => setIsOpen((p) => !p)} />
       </motion.nav>
     </motion.div>
   );

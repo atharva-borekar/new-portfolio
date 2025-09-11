@@ -18,7 +18,7 @@ interface CardProps {
   project: Project;
 }
 
-const Card = ({ id, setIsHovered, isHovered, project }: CardProps) => {
+const Card = ({ id, isHovered, project }: CardProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

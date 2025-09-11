@@ -2,10 +2,9 @@
 
 import ExperienceTimeline from "components/Information/Experience";
 import IntroductionSection from "components/Information/IntroductionSection";
-import { animate, inView } from "motion";
 import dynamic from "next/dynamic";
 import styles from "page.module.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const Projects = dynamic(() => import("components/Information/Projects"), {
   ssr: false,
@@ -13,24 +12,6 @@ const Projects = dynamic(() => import("components/Information/Projects"), {
 export default function Home() {
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const elements = document.querySelectorAll(".scroll-section pre");
-
-    elements.forEach((target) => {
-      inView(target, ({ target }) => {
-        animate(
-          target,
-          { opacity: 1, y: [100, 0] },
-          {
-            duration: 0.9,
-            easing: [0.17, 0.55, 0.55, 1],
-          }
-        );
-
-        return () => animate(target, { opacity: 0, y: 100 });
-      });
-    });
-  }, []);
   return (
     <div className={styles.container} ref={containerRef}>
       <div className="example">
