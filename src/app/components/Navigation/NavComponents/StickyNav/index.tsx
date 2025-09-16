@@ -79,13 +79,13 @@ const StickyNav = () => {
           About
         </motion.a> */}
         <motion.a
-          href="#contact"
+          href="#resume"
           className={styles.navItem}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.5 }}
         >
-          Contact
+          Resume
         </motion.a>
       </nav>
     </motion.div>

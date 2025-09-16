@@ -41,8 +41,8 @@ const NavigationList = () => {
       ),
     },
     {
-      title: "Contact",
-      href: "#contact",
+      title: "Resume",
+      href: "#resume",
       icon: (
         <IoMdContact size={30} color="#ff9800" style={{ marginRight: 8 }} />
       ),

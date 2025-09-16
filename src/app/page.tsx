@@ -2,6 +2,7 @@
 
 import ExperienceTimeline from "components/Information/Experience";
 import IntroductionSection from "components/Information/IntroductionSection";
+import Resume from "components/Information/Resume";
 import dynamic from "next/dynamic";
 import styles from "page.module.css";
 import { useRef } from "react";
@@ -23,6 +24,9 @@ export default function Home() {
         </section>
         <section id="projects" className="projects">
           <Projects />
+        </section>
+        <section id="resume" className="projects">
+          <Resume />
         </section>
       </div>
 
