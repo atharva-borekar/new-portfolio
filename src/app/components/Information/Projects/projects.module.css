@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  height: 100vh;
+  height: max-content;
   color: white;
   padding-top: 10rem;
 }

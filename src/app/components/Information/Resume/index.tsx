@@ -2,7 +2,7 @@
 import styles from "./resume.module.css";
 const Resume = () => {
   return (
-    <section id="resumeSection">
+    <section id="resumeSection" className={styles.resumeSection}>
       <div
         style={{
           justifySelf: "center",

@@ -1,16 +1,19 @@
-.resume {
-  height: 145vh;
-  width: 50%;
-  border: "none";
-  background-color: "transparent";
-}
-.resumeSection {
-  position: relative;
-  height: 100vh;
-  color: white;
-  padding-top: 10rem;
-}
 .resumeContainer {
   display: flex;
+  height: 100%;
   justify-content: center;
+  padding: 1rem; /* adds breathing space on mobile */
+}
+
+.resume {
+  width: 100%;
+  max-width: 800px; /* A4-ish width for desktop */
+  height: 150vh; /* fills viewport height */
+  border: none;
+}
+
+@media (max-width: 700px) {
+  .resume {
+    height: 500px; /* shorter height on mobile */
+  }
 }
