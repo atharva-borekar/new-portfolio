@@ -13,21 +13,21 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    year: "08/2023 – 06/2025",
+    year: "08/2023 - 06/2025",
     role: "Software Developer",
     company: "Idox PLC",
     description:
       "Migrated GIS platform from JavaScript to TypeScript, built reusable React components, developed APIs in Ruby on Rails/Node.js, and improved Mapbox GL performance.",
   },
   {
-    year: "09/2021 – 07/2023",
+    year: "09/2021 - 07/2023",
     role: "Software Engineer",
     company: "Josh Software Pvt. Ltd.",
     description:
       "Developed full-stack solutions using React.js and Django, migrated legacy AngularJS system to React, created dashboards with interactive visualizations, and mentored junior developers.",
   },
   {
-    year: "01/2021 – 07/2021",
+    year: "01/2021 - 07/2021",
     role: "Software Engineer Intern",
     company: "Josh Software Pvt. Ltd.",
     description:

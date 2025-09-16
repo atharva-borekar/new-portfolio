@@ -2,7 +2,7 @@
 import styles from "./resume.module.css";
 const Resume = () => {
   return (
-    <>
+    <section id="resumeSection">
       <div
         style={{
           justifySelf: "center",
@@ -21,7 +21,7 @@ const Resume = () => {
           style={{}}
         />
       </div>
-    </>
+    </section>
   );
 };
 

@@ -2,14 +2,11 @@
 
 import ExperienceTimeline from "components/Information/Experience";
 import IntroductionSection from "components/Information/IntroductionSection";
+import Projects from "components/Information/Projects";
 import Resume from "components/Information/Resume";
-import dynamic from "next/dynamic";
 import styles from "page.module.css";
 import { useRef } from "react";
 
-const Projects = dynamic(() => import("components/Information/Projects"), {
-  ssr: false,
-});
 export default function Home() {
   const containerRef = useRef(null);
 

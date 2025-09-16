@@ -1,6 +1,13 @@
 .section {
   position: relative;
-  background: #111;
+  height: 100vh;
+  color: white;
+  padding-top: 10rem;
+}
+
+.heading {
+  justify-self: center;
+  margin-bottom: 2rem;
 }
 
 .sticky {
@@ -15,7 +22,7 @@
 .cardsWrapper {
   display: flex;
   gap: 2rem;
-  will-change: transform; /* smooth GPU-accelerated movement */
+  will-change: transform;
 }
 
 .fadeCard {

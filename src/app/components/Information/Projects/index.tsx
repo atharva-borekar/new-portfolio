@@ -3,9 +3,12 @@
 import Card from "components/CustomComponents/Card";
 import profileData from "constants/portfolioData";
 import { motion, useAnimationFrame } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import styles from "./projects.module.css";
 
 const Projects = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [offsetX, setOffsetX] = useState(0);
   const [isHovered, setIsHovered] = useState(-1);
   const [isMobile, setIsMobile] = useState(false);
@@ -38,9 +41,9 @@ const Projects = () => {
   const translateX = offsetX % totalWidth;
 
   return (
-    <>
+    <section ref={containerRef} className={styles.section}>
       {/* Projects Heading */}
-      <div style={{ justifySelf: "center", marginBottom: "2rem" }}>
+      <div className={styles.heading}>
         <h2>Projects</h2>
       </div>
 
@@ -108,7 +111,7 @@ const Projects = () => {
           </motion.div>
         )}
       </div>
-    </>
+    </section>
   );
 };
 
